@@ -51,6 +51,8 @@ open class ARPresenter: UIView
     */
     open var bottomBorder: Double = 0.55
     
+    open var viewTopOffset: Double = 92.0
+    
     /**
      Distance offset mode, it affects vertical offset of annotations by distance.
      */
@@ -438,7 +440,8 @@ open class ARPresenter: UIView
         guard let maxDistance = self.activeAnnotations.last?.distanceFromUser else { return }
         if minDistance > maxDistance { minDistance = maxDistance }
         let deltaDistance = maxDistance - minDistance
-        let availableHeight = Double(self.bounds.size.height) * self.bottomBorder - 30 // 30 because we don't want them to be on top but little bit below
+//        let availableHeight = Double(self.bounds.size.height) * self.bottomBorder - 30 // 30 because we don't want them to be on top but little bit below
+        let availableHeight = Double(self.bounds.size.height) * self.bottomBorder - self.viewTopOffset
         
         if self.distanceOffsetMode == .automatic
         {

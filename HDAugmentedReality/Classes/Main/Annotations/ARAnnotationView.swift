@@ -29,7 +29,7 @@ open class ARAnnotationView: UIView
     /// Internal usage. Position of annotation view without heading, pitch, stack offsets.
     internal var arPosition: CGPoint = CGPoint(x: 0, y: 0)
     /// Internal usage. Offset for arPosition, this is not offset for heading/pitch but offset that is set in ARPresenterTransform.
-    internal var arPositionOffset = CGPoint(x: 0, y: 0)
+    open var arPositionOffset = CGPoint(x: 0, y: 0)
     /// Internal usage. Used for calculations.
     internal var arAlternateFrame: CGRect = CGRect.zero
 

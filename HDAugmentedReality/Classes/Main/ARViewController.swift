@@ -120,7 +120,7 @@ open class ARViewController: UIViewController, ARTrackingManagerDelegate
         self.initializeInternal()
         
         // Needed because we want IBOutlets to be available immediately after init, so they can be configured from outside.
-        self.loadViewIfNeeded()
+//        self.loadViewIfNeeded()
     }
     
     required public init?(coder aDecoder: NSCoder)
@@ -135,7 +135,7 @@ open class ARViewController: UIViewController, ARTrackingManagerDelegate
         self.initializeInternal()
         
         // Needed because we want IBOutlets to be available immediately after init, so they can be configured from outside.
-        self.loadViewIfNeeded()
+//        self.loadViewIfNeeded()
     }
     
     internal func initializeInternal()
@@ -286,6 +286,9 @@ open class ARViewController: UIViewController, ARTrackingManagerDelegate
     //==========================================================================================================================================================
     // MARK:                                                        Annotations, reload
     //==========================================================================================================================================================
+    
+    open func arrangeSubviewsZIndexByDistance() {}
+    
     /// Sets annotations and calls reload on presenter
     open func setAnnotations(_ annotations: [ARAnnotation])
     {
